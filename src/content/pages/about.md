@@ -1,6 +1,7 @@
 ---
 title: 'About Me'
 description: 'Learn more about who I am and what I do'
+layout: 'default'
 ---
 
 ## ... and my new Astro site!

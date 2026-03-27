@@ -1,11 +1,39 @@
 ---
+import navigation from "../content/settings/navigation.json";
 
+const currentPath = Astro.url.pathname;
+const isActive = (href: string) => {
+  // Handle both /path and /path/ variations
+  const normalizedHref = href.replace(/\/$/, "") || "/";
+  const normalizedPath = currentPath.replace(/\/$/, "") || "/";
+
+  // Exact match for home
+  if (normalizedHref === "/") {
+    return normalizedPath === "/";
+  }
+
+  // For other pages, match if current path starts with href (handles nested routes)
+  return (
+    normalizedPath === normalizedHref ||
+    normalizedPath.startsWith(normalizedHref + "/")
+  );
+};
 ---
 
 <div id="main-menu" class="nav-links">
-  <a href="/">Home</a>
-  <a href="/about/">About</a>
-  <a href="/blog/">Blog</a>
-  <a href="/tags/">Tags</a>
-  <a href="/contact/">Contact</a>
+  {
+    navigation.main.map((link) => (
+      <a href={link.href} class:list={[{ active: isActive(link.href) }]}>
+        {link.label}
+      </a>
+    ))
+  }
 </div>
+
+<style>
+  .nav-links a.active {
+    font-weight: bold;
+    color: #b336d0;
+    text-decoration: underline;
+  }
+</style>

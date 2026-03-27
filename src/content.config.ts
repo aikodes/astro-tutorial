@@ -24,7 +24,8 @@ const pages = defineCollection({
   loader: glob({ pattern: '**/*.md', base: "./src/content/pages" }),
   schema: z.object({
     title: z.string(),
-    description: z.string()
+    description: z.string(),
+    layout: z.enum(['default', 'home']).optional().default('default')
   })
 });
 // Export a single `collections` object to register your collection(s)

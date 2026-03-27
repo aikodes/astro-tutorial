@@ -1,6 +1,7 @@
 ---
 title: 'Contact'
 description: 'Get in touch with me'
+layout: 'default'
 ---
 
 ## Get in Touch

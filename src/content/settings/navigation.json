@@ -1,0 +1,9 @@
+{
+  "main": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about/" },
+    { "label": "Blog", "href": "/blog/" },
+    { "label": "Tags", "href": "/tags/" },
+    { "label": "Contact", "href": "/contact/" }
+  ]
+}

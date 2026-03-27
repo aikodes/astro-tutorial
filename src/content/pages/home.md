@@ -1,6 +1,7 @@
 ---
 title: 'Home Page'
 description: 'Welcome to my awesome blog'
+layout: 'home'
 ---
 
 ## My awesome blog subtitle
