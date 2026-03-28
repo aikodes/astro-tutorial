@@ -14,11 +14,14 @@ export async function getStaticPaths() {
 const { page } = Astro.props;
 const { Content } = await render(page);
 
-const layout = page.data.layout || "default";
-const LayoutComponent = layout === "home" ? HomeLayout : BaseLayout;
+const layouts = {
+  home: HomeLayout,
+  default: BaseLayout,
+};
+const LayoutComponent = layouts[page.data.layout] || layouts.default;
 ---
 
-<LayoutComponent pageTitle={page.data.title} class="prose">
+<LayoutComponent pageTitle={page.data.title}>
   <p>{page.data.description}</p>
   <Content />
 </LayoutComponent>

@@ -1,17 +1,33 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@media (prefers-reduced-motion: reduce) {
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --primary: var(--color-indigo-600);
+}
+
+.dark {
+  --primary: var(--color-orange-400);
+}
+
+@theme {
+  --color-primary: var(--primary);
+}
+
+ @media (prefers-reduced-motion: reduce) {
+  ::view-transition,
   ::view-transition-group(*),
+  ::view-transition-image-pair(*),
   ::view-transition-old(*),
   ::view-transition-new(*) {
     animation: none !important;
-  }
-}
+   }
+ }
 
 /* nav styles */
 .menu {
-  background-color: #0d0950;
+  background-color: var(--color-indigo-900);
   border: none;
   color: #fff;
   font-size: 1.2rem;
@@ -33,12 +49,12 @@
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: var(--color-indigo-900);
 }
 
 .nav-links a:hover,
 .nav-links a:focus{
-  background-color: #ff9776;
+  background-color: var(--color-orange-400);
 }
 
 :has(.menu[aria-expanded="true"]) .nav-links {
@@ -65,7 +81,7 @@
 }
 
 html.dark {
-  background-color: #0d0950;
+  background-color: var(--color-indigo-900);
   color: #fff;
 }
 
@@ -84,5 +100,5 @@ html.dark {
 }
 
 .dark a {
-  color: #ff9776;
+  color: var(--color-orange-400);
 }

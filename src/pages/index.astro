@@ -11,7 +11,7 @@ if (!home) {
 const { Content } = await render(home);
 ---
 
-<HomeLayout pageTitle={home.data.title} class="prose">
+<HomeLayout pageTitle={home.data.title}>
 	<p>{home.data.description}</p>
 	<Content />
 </HomeLayout>

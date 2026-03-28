@@ -8,17 +8,7 @@ const allPosts = await getCollection("blog");
 const pageTitle = "My Astro Learning Blog";
 ---
 
-<!-- Debug section to see allPosts structure -->
-<details>
-  <summary>Debug: allPosts structure</summary>
-  <pre>{JSON.stringify(allPosts.map((p: any) => ({ 
-      url: p.url, 
-      frontmatter: p.frontmatter,
-      hasContent: !!p.getContent
-    })), null, 2)}</pre>
-</details>
-
-<BaseLayout pageTitle={pageTitle} class="prose">
+<BaseLayout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
   <ul>
     {
@@ -28,3 +18,13 @@ const pageTitle = "My Astro Learning Blog";
     }
   </ul>
 </BaseLayout>
+
+<!-- Debug section to see allPosts structure -->
+<details>
+  <summary>Debug: allPosts structure</summary>
+  <pre>{JSON.stringify(allPosts.map((p: any) => ({ 
+      url: p.url, 
+      frontmatter: p.frontmatter,
+      hasContent: !!p.getContent
+    })), null, 2)}</pre>
+</details>

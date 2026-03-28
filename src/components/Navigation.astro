@@ -23,7 +23,11 @@ const isActive = (href: string) => {
 <div id="main-menu" class="nav-links">
   {
     navigation.main.map((link) => (
-      <a href={link.href} class:list={[{ active: isActive(link.href) }]}>
+      <a
+        href={link.href}
+        class:list={[{ active: isActive(link.href) }]}
+        aria-current={isActive(link.href) ? "page" : undefined}
+      >
         {link.label}
       </a>
     ))
@@ -33,7 +37,7 @@ const isActive = (href: string) => {
 <style>
   .nav-links a.active {
     font-weight: bold;
-    color: #b336d0;
+    color: var(--color-primary);
     text-decoration: underline;
   }
 </style>
