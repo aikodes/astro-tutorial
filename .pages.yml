@@ -52,10 +52,11 @@ content:
         label: Layout
         type: select
         options:
-          - label: Default
-            value: default
-          - label: Home
-            value: home
+          values:
+            - name: default
+              label: Default
+            - name: home
+              label: Home
       - name: body
         label: Content
         type: rich-text
