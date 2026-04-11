@@ -31,7 +31,7 @@ content:
             type: string
       - name: tags
         label: Tags
-        type: list
+        type: string
       - name: body
         label: Content
         type: rich-text
