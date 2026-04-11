@@ -5,7 +5,7 @@ description: Created from Pages CMS
 author: ID
 tags: "pagescms "
 ---
-![](/public/media/qwencode.gif)
+![](media/qwencode.gif)
 
 I uploaded an image and edited this blog entry in Pages CMS. Isn't he cute **haha**
 
