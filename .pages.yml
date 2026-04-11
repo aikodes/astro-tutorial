@@ -30,6 +30,9 @@ content:
       - name: tags
         label: Tags
         type: list
+      - name: body
+        label: Content
+        type: rich-text
     view:
       fields: [title, pubDate, author]
   - name: pages
@@ -51,5 +54,8 @@ content:
             label: Default
           - value: home
             label: Home
+      - name: body
+        label: Content
+        type: rich-text
     view:
       fields: [title, layout]
