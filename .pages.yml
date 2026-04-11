@@ -18,12 +18,12 @@ content:
         label: Author
         type: string
       - name: image
-        label: Image
+        label: Featured Image
         type: object
         fields:
           - name: url
-            label: URL
-            type: string
+            label: Image
+            type: image
           - name: alt
             label: Alt Text
             type: string
