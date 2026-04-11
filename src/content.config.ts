@@ -3,7 +3,7 @@ import { glob } from "astro/loaders";
 // Import utilities from `astro:content`
 import { defineCollection } from "astro:content";
 // Import Zod
-import { z } from "astro/zod";
+import { z } from "astro:content";
 // Define a `loader` and `schema` for each collection
 const blog = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: "./src/content/blog" }),
@@ -16,7 +16,12 @@ const blog = defineCollection({
       url: z.string(),
       alt: z.string()
     }).optional(),
-    tags: z.array(z.string()).optional()
+    tags: z.union([z.string(), z.array(z.string())]).optional().transform((val) => {
+      if (typeof val === 'string') {
+        return val.split(',').map(s => s.trim()).filter(Boolean);
+      }
+      return val;
+    })
   })
 });
 
