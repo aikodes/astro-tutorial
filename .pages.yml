@@ -52,10 +52,8 @@ content:
         label: Layout
         type: select
         options:
-          - value: default
-            label: Default
-          - value: home
-            label: Home
+          default: Default
+          home: Home
       - name: body
         label: Content
         type: rich-text
