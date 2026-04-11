@@ -5,6 +5,8 @@ description: Created from Pages CMS
 author: ID
 tags: "pagescms "
 ---
-![](/public/media/O1CN01KDhOma1DUo8oa7OIU_!!6000000000220-1-tps-240-240.gif)
+![](/public/media/qwencode.gif)
 
-I uploaded an image and edited this blog entry in Pages CMS.
+I uploaded an image and edited this blog entry in Pages CMS. Isn't he cute **haha**
+
+I'm thinking of getting the [Alibaba coding Plan](https://www.alibabacloud.com/en/campaign/ai-scene-coding?_p_lc=1).
